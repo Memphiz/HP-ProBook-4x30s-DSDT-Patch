@@ -99,6 +99,20 @@ DefinitionBlock ("", "SSDT", 2, "hack", "fan", 0)
         Name (FCTU, 20)		// timeout for changes (fan rpm going up)
         Name (FCTD, 40)		// timeout for changes (fan rpm going down)
 #endif
+
+#ifdef MEMPHIZ
+// another alternate by Memphiz
+Name(FTA1, Package()
+{
+  0x35, 0x39,  0x3F,  0x44,  0x48,  0x48,  0xFF
+})
+Name(FTA2, Package()
+{
+  0xFF, 0x52, 0x4A, 0x42, 0x38, 0x31, 0x00
+})
+Name (FCTU, 20)		// timeout for changes (fan rpm going up)
+Name (FCTD, 40)		// timeout for changes (fan rpm going down)
+#endif
 #ifdef GRAPPLER
         // Smooth fan table by Don_Grappler
         Name(FTA1, Package()
