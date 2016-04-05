@@ -56,7 +56,6 @@ DefinitionBlock ("", "SSDT", 2, "hack", "fan", 0)
             Release (\_SB.PCI0.LPCB.EC0.ECMX)
             Return (Local0)
         }
-#ifdef DEBUG
         // for debugging fan control\n
         Method (TCPP, 0, Serialized)  // Average temp\n
         {
@@ -68,7 +67,6 @@ DefinitionBlock ("", "SSDT", 2, "hack", "fan", 0)
         {
             Return (FCNT)
         }
-#endif
 #ifdef QUIET
         // original quiet table by RehabMan
         Name(FTA1, Package()
